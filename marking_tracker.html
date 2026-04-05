@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Script Marker</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', sans-serif; background: #f0f4f8; min-height: 100vh; padding: 24px 16px; }
+  h1 { text-align: center; color: #1e293b; font-size: 1.5rem; margin-bottom: 6px; }
+  .subtitle { text-align: center; color: #64748b; font-size: 0.9rem; margin-bottom: 24px; }
+
+  .card { background: white; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 20px; margin-bottom: 16px; }
+
+  .question-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 0; border-bottom: 1px solid #f1f5f9;
+  }
+  .question-row:last-child { border-bottom: none; }
+  .q-label { font-weight: 600; color: #334155; min-width: 90px; font-size: 0.95rem; }
+
+  .score-control { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+  .btn { width: 32px; height: 32px; border-radius: 50%; border: none; cursor: pointer; font-size: 1.1rem; font-weight: bold; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
+  .btn-minus { background: #fee2e2; color: #dc2626; }
+  .btn-minus:hover { background: #fca5a5; }
+  .btn-plus { background: #dcfce7; color: #16a34a; }
+  .btn-plus:hover { background: #86efac; }
+  .score-display { width: 40px; text-align: center; font-size: 1.1rem; font-weight: 700; color: #1e293b; }
+  .max-mark { color: #94a3b8; font-size: 0.85rem; }
+
+  .bar-wrap { flex: 1; background: #f1f5f9; border-radius: 99px; height: 8px; overflow: hidden; min-width: 60px; }
+  .bar { height: 100%; border-radius: 99px; transition: width 0.3s, background 0.3s; }
+
+  .summary { background: #1e293b; color: white; border-radius: 14px; padding: 20px; text-align: center; }
+  .total-score { font-size: 2.8rem; font-weight: 800; }
+  .total-label { font-size: 0.9rem; color: #94a3b8; margin-bottom: 8px; }
+  .grade-badge { display: inline-block; padding: 4px 16px; border-radius: 99px; font-weight: 700; font-size: 1rem; margin-top: 8px; }
+  .pct { color: #94a3b8; font-size: 0.9rem; margin-top: 4px; }
+
+  .reset-btn { display: block; margin: 16px auto 0; padding: 10px 28px; background: #e2e8f0; color: #475569; border: none; border-radius: 8px; cursor: pointer; font-size: 0.95rem; font-weight: 600; transition: background 0.15s; }
+  .reset-btn:hover { background: #cbd5e1; }
+</style>
+</head>
+<body>
+
+<h1>📝 Script Marker</h1>
+<p class="subtitle">10 Questions · 6 Marks Each · 60 Total</p>
+
+<div class="card" id="questions-card"></div>
+
+<div class="summary">
+  <div class="total-label">TOTAL SCORE</div>
+  <div class="total-score"><span id="total">0</span><span style="color:#475569;font-size:1.5rem">/60</span></div>
+  <div class="pct" id="pct">0%</div>
+  <span class="grade-badge" id="grade-badge">—</span>
+</div>
+
+<button class="reset-btn" onclick="resetAll()">↺ Reset All</button>
+
+<script>
+  const MAX = 6;
+  const NUM_Q = 10;
+  const scores = new Array(NUM_Q).fill(0);
+
+  function barColor(score) {
+    const pct = score / MAX;
+    if (pct === 0) return '#e2e8f0';
+    if (pct <= 0.33) return '#f87171';
+    if (pct <= 0.66) return '#fb923c';
+    if (pct < 1) return '#facc15';
+    return '#4ade80';
+  }
+
+  function grade(pct) {
+    if (pct >= 90) return ['A+', '#4ade80'];
+    if (pct >= 80) return ['A', '#86efac'];
+    if (pct >= 70) return ['B', '#93c5fd'];
+    if (pct >= 60) return ['C', '#fde68a'];
+    if (pct >= 50) return ['D', '#fdba74'];
+    return ['F', '#fca5a5'];
+  }
+
+  function render() {
+    const container = document.getElementById('questions-card');
+    container.innerHTML = '';
+    scores.forEach((s, i) => {
+      const pct = (s / MAX) * 100;
+      const row = document.createElement('div');
+      row.className = 'question-row';
+      row.innerHTML = `
+        <span class="q-label">Question ${i + 1}</span>
+        <div class="bar-wrap"><div class="bar" style="width:${pct}%;background:${barColor(s)}"></div></div>
+        <div class="score-control">
+          <button class="btn btn-minus" onclick="change(${i}, -1)">−</button>
+          <span class="score-display">${s}</span>
+          <button class="btn btn-plus" onclick="change(${i}, 1)">+</button>
+          <span class="max-mark">/ ${MAX}</span>
+        </div>
+      `;
+      container.appendChild(row);
+    });
+    updateSummary();
+  }
+
+  function updateSummary() {
+    const total = scores.reduce((a, b) => a + b, 0);
+    const pct = Math.round((total / 60) * 100);
+    const [g, color] = grade(pct);
+    document.getElementById('total').textContent = total;
+    document.getElementById('pct').textContent = pct + '%';
+    const badge = document.getElementById('grade-badge');
+    badge.textContent = g;
+    badge.style.background = color;
+    badge.style.color = '#1e293b';
+  }
+
+  function change(i, delta) {
+    scores[i] = Math.max(0, Math.min(MAX, scores[i] + delta));
+    render();
+  }
+
+  function resetAll() {
+    scores.fill(0);
+    render();
+  }
+
+  render();
+</script>
+</body>
+</html>

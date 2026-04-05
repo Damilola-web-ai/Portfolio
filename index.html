@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Damilola Olarewaju — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NOISE OVERLAY -->
+  <div class="noise"></div>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">D<span class="accent">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#contact" class="btn-outline">Hire Me</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-text">DEV</div>
+    <div class="hero-content">
+      <div class="hero-tag reveal-up">— CS Student & Educator</div>
+      <h1 class="hero-title reveal-up">
+        <span class="line">Damilola</span>
+        <span class="line accent-line">Olarewaju</span>
+      </h1>
+      <p class="hero-sub reveal-up">
+        Building the future one line of code at a time. <br/>
+        Tech enthusiast · Educator · Content Creator
+      </p>
+      <div class="hero-actions reveal-up">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#about" class="btn-ghost">About Me ↓</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+    <div class="hero-orbs">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span>Computer Science</span>
+      <span class="dot">✦</span>
+      <span>Web Development</span>
+      <span class="dot">✦</span>
+      <span>AI Enthusiast</span>
+      <span class="dot">✦</span>
+      <span>Educator</span>
+      <span class="dot">✦</span>
+      <span>Content Creator</span>
+      <span class="dot">✦</span>
+      <span>DamiInBeta</span>
+      <span class="dot">✦</span>
+      <span>Computer Science</span>
+      <span class="dot">✦</span>
+      <span>Web Development</span>
+      <span class="dot">✦</span>
+      <span>AI Enthusiast</span>
+      <span class="dot">✦</span>
+      <span>Educator</span>
+      <span class="dot">✦</span>
+      <span>Content Creator</span>
+      <span class="dot">✦</span>
+      <span>DamiInBeta</span>
+      <span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-tag reveal-up">01 — About</div>
+      <div class="about-grid">
+ <div class="about-image-wrap reveal-left">
+  
+  <div class="about-image-box">
+    <div class="about-image-placeholder">
+      <img src="image.jpg" alt="Damilola Olarewaju">
+    </div>
+  </div>
+
+  <div class="image-ring"></div>
+
+  <div class="about-badge">
+    <span class="badge-num">2+</span>
+    <span class="badge-text">Years Teaching</span>
+  </div>
+</div>
+        <div class="about-text reveal-right">
+          <h2 class="section-title">Who Am I?</h2>
+          <p>
+            I'm <strong>Damilola Olarewaju</strong> — a Computer Science student at MIVA Open University, 
+            a coding & computer teacher at Perfect Glory Academy, and a tech content creator 
+            behind the <strong class="accent">DamiInBeta</strong> brand.
+          </p>
+          <p>
+            I teach coding, Microsoft Office, and AI tools to primary and secondary school students. 
+            I'm passionate about making technology accessible — and about building cool things on the web.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num" data-target="7">0</span>
+              <span class="stat-label">Courses This Semester</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-target="50">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Students Taught</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-tag reveal-up">02 — Skills</div>
+      <h2 class="section-title center reveal-up">What I Work With</h2>
+      <div class="skills-grid">
+        <div class="skill-card reveal-up" style="--delay:0s">
+          <div class="skill-icon">🌐</div>
+          <h3>Web Development</h3>
+          <p>HTML, CSS, JavaScript — building clean, responsive, interactive web experiences.</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+        </div>
+        <div class="skill-card reveal-up" style="--delay:0.1s">
+          <div class="skill-icon">🐍</div>
+          <h3>Python</h3>
+          <p>From scripting to AI/ML pipelines — comfortable with Python for real-world applications.</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
+        </div>
+        <div class="skill-card reveal-up" style="--delay:0.2s">
+          <div class="skill-icon">🤖</div>
+          <h3>AI & Machine Learning</h3>
+          <p>Building with AI tools, experimenting with models, and demystifying AI for students.</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
+        </div>
+        <div class="skill-card reveal-up" style="--delay:0.3s">
+          <div class="skill-icon">📊</div>
+          <h3>Microsoft Office</h3>
+          <p>Word, Excel, PowerPoint — creating professional documents and teaching them effectively.</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div>
+        </div>
+        <div class="skill-card reveal-up" style="--delay:0.4s">
+          <div class="skill-icon">🎬</div>
+          <h3>Content Creation</h3>
+          <p>Video scripting, shooting & editing for YouTube/TikTok — building the DamiInBeta brand.</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+        </div>
+        <div class="skill-card reveal-up" style="--delay:0.5s">
+          <div class="skill-icon">🧑‍🏫</div>
+          <h3>Teaching & Education</h3>
+          <p>Breaking down complex tech topics for young learners — primary to secondary school level.</p>
+          <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-tag reveal-up">03 — Projects</div>
+      <h2 class="section-title center reveal-up">Things I've Built</h2>
+      <div class="projects-grid">
+
+        <div class="project-card featured reveal-up">
+          <div class="project-num">01</div>
+          <div class="project-content">
+            <div class="project-tags"><span>Python</span><span>AI/ML</span><span>Deep Learning</span></div>
+            <h3>AI Video Generator</h3>
+            <p>A custom AI video generator built from scratch in Google Colab with CNN Image Encoder, Transformer-based Text Encoder, and synthetic training data pipeline.</p>
+            <a href="under-construction.html" class="project-link">View Project →</a>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <div class="project-card reveal-up" style="--delay:0.1s">
+          <div class="project-num">02</div>
+          <div class="project-content">
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <h3>Interactive Marking Tracker</h3>
+            <p>A custom HTML tool built for teachers to track student assessments and marking at Perfect Glory Academy.</p>
+            <a href="marking_tracker.html" class="project-link" target="_blank">View Project →</a>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <div class="project-card reveal-up" style="--delay:0.2s">
+          <div class="project-num">03</div>
+          <div class="project-content">
+            <div class="project-tags"><span>Branding</span><span>Content</span><span>Video</span></div>
+            <h3>DamiInBeta — Content Brand</h3>
+            <p>A YouTube/TikTok brand focused on CS student life, AI tools for students, and tech comedy. Built from strategy to script to screen.</p>
+            <a href="https://www.youtube.com/channel/UCXwwYOFz6VG1H1SDmh2yUzg" class="project-link" target="_blank">View Project →</a>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+        <div class="project-card reveal-up" style="--delay:0.3s">
+          <div class="project-num">04</div>
+          <div class="project-content">
+            <div class="project-tags"><span>Education</span><span>Curriculum</span></div>
+            <h3>Nigerian Exam Prep Platform</h3>
+            <p>A CBT practice platform concept targeting Nigerian secondary school students, built on years of classroom teaching experience.</p>
+            <a href="under-construction.html" class="project-link">View Project →</a>
+          </div>
+          <div class="project-glow"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-tag reveal-up">04 — Contact</div>
+      <h2 class="section-title center reveal-up">Let's Build Something</h2>
+      <p class="contact-sub reveal-up">Got a project, collaboration, or just want to say hi? I'm open.</p>
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div>
+              <span class="contact-label">Email</span>
+              <a href="mailto:damiola09054@email.com" class="contact-val">damilola@email.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🎬</span>
+            <div>
+              <span class="contact-label">Content</span>
+              <a href="#" class="contact-val">@DamiInBeta</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <span class="contact-label">Location</span>
+              <span class="contact-val">Lagos, Nigeria</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form reveal-right" id="contactForm">
+  <div class="form-group">
+    <input type="text" name="name" placeholder="Your Name" required />
+  </div>
+  <div class="form-group">
+    <input type="email" name="email" placeholder="Your Email" required />
+  </div>
+  <div class="form-group">
+    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+  </div>
+  <button type="submit" class="btn-primary full-width">Send Message ✦</button>
+</form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">D<span class="accent">.</span></div>
+      <p>© 2025 Damilola Olarewaju. Built with 💻 & ☕</p>
+      <div class="footer-links">
+        <a href="#home">Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

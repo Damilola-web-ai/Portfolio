@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Under Construction — Damilola Olarewaju</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Centers everything and handles the layout */
+    .wip-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+    }
+    
+    .wip-emoji {
+      font-size: clamp(5rem, 15vw, 8rem); /* Slightly scaled down to fit the text */
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      user-select: none;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .wip-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .wip-subtitle {
+      color: var(--muted);
+      font-size: 0.9rem;
+      max-width: 450px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="noise"></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <div class="wip-container">
+    <div class="wip-emoji">🚧</div>
+    <h1 class="wip-title">System Compiling...</h1>
+    <p class="wip-subtitle">
+      I'm currently writing the code for this project. Check back soon to see the final build!
+    </p>
+    
+    <a href="index.html" class="btn-outline">← Return to Base</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
